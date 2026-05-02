@@ -1,0 +1,25 @@
+# macOS
+.DS_Store
+.Trash/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+.env
+*.env
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Ignorer tout ce qui est en dehors du projet
+../
+EOF
