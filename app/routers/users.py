@@ -4,6 +4,7 @@ from app.models.users import User
 from app.security import hash_password
 from sqlalchemy.orm import Session
 from app.database import Base, get_db
+from app.security import get_current_user
 
 
 
@@ -24,3 +25,7 @@ async def create_user(user: UserCreate, db:Session = Depends(get_db)):
     db.refresh(nouvel_utilisateur)
     return nouvel_utilisateur
 
+
+@router.get("/users/me", response_model=UserOut)
+def get_me(current_user: User = Depends(get_current_user)):
+    return current_user
